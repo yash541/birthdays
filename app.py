@@ -20,6 +20,3 @@ def index():
     comingup=Friends[min(Friends.keys())]
     birthday=now.month==9 and now.day==6
     return render_template("index.html",birthday=birthday,Friends=Friends,comingup=comingup)
-
-datetime.date.today()-datetime.date(2021,10,1) 
-
