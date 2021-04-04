@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>any of भैलू's birthday?</title>
+		<style>
+			body{
+				text-align: center;
+				font-size: 28;
+				background-image: url('/static/img_friends.jpg')
+			}
+			table{
+				border="1" 
+           		align="center"
+			}
+			th,td {
+  				padding: 15px;
+  				text-align: center;
+			}
+			tr:nth-child(even) {background-color: #f2f2f2;}
+		</style>
+	</head>
+	<body background-image="img_friends.jpg">
+		{% if birthday %}
+			<h1>yes! Happy Birthday yashwanth</h1>
+		{% else %}
+			<h1>भैलू</h1>
+			<h2>None of us is celebrating birthday today</h2>
+			<h3>Here is how many days are left before everyone of us turn one year older</h3>
+			<table border="1" align="center" style="border-collapse:collapse">
+			<thead><tr><th>Name</th><th>Days left</th></tr></thead>
+			<tbody>
+				 {% for key, segment in Friends.items() %}
+				    <tr>
+				      <td>{{ segment }}</td>
+				      <td>{{ key }}</td>
+				    </tr>
+				  {% endfor %}
+			</tbody>
+			</table>
+		{% endif %}
+		<h3>coming up is {{ comingup }}'s birthday.....</h3>
+	</body>
+</html>
